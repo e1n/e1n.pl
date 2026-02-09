@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.data.resume.name }} - Resume</title>
+    <link rel="stylesheet" href="{{ '/assets/css/resume.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="resume-container">
+        <!-- Header Section with Profile -->
+        <header class="resume-header">
+            <div class="profile-section">
+                <div class="profile-image-container">
+                    <img src="{{ site.data.resume.profile_image | relative_url }}" alt="{{ site.data.resume.name }}" class="profile-image">
+                </div>
+                <h1 class="name">{{ site.data.resume.name }}</h1>
+                <p class="tagline">{{ site.data.resume.tagline }}</p>
+
+                <div class="contact-buttons">
+                    <a href="mailto:{{ site.data.resume.email }}" class="btn btn-contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="{{ site.data.resume.linkedin }}" target="_blank" class="btn btn-linkedin">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="{{ site.data.resume.resume_pdf | relative_url }}" target="_blank" class="btn btn-pdf">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>Resume PDF</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="container">
+                <h2 class="section-title">{{ site.data.resume.about.title }}</h2>
+                <div class="about-content">
+                    <p class="about-description">{{ site.data.resume.about.description }}</p>
+
+                    <div class="interests-hobbies">
+                        <div class="interests">
+                            <h3><i class="fas fa-star"></i> Interests</h3>
+                            <ul>
+                                {% for interest in site.data.resume.interests %}
+                                <li>{{ interest }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="hobbies">
+                            <h3><i class="fas fa-heart"></i> Hobbies</h3>
+                            <ul>
+                                {% for hobby in site.data.resume.hobbies %}
+                                <li>{{ hobby }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section class="experience-section">
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+
+                {% for job in site.data.resume.experience %}
+                <div class="job">
+                    {% if job.company_logo %}
+                    <div class="company-logo-container">
+                        <img src="{{ job.company_logo }}" alt="{{ job.company }}" class="company-logo">
+                    </div>
+                    {% endif %}
+
+                    <div class="job-header">
+                        <div class="job-title">
+                            <h3>{{ job.role }}</h3>
+                            <h4 class="company">{{ job.company }}</h4>
+                            <p class="location">{{ job.location }}</p>
+                        </div>
+                        <div class="job-dates">
+                            <span class="date">{{ job.start_date }} - {{ job.end_date }}</span>
+                        </div>
+                    </div>
+
+                    <div class="projects">
+                        {% for project in job.projects %}
+                        <div class="project">
+                            <h4 class="project-name">{{ project.name }}</h4>
+                            <p class="project-description">{{ project.description }}</p>
+
+                            {% if project.technologies %}
+                            <div class="tech-stack">
+                                {% for tech in project.technologies %}
+                                <div class="tech-item" title="{{ tech.name }}">
+                                    <img src="{{ tech.logo }}" alt="{{ tech.name }}">
+                                    <span>{{ tech.name }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+
+                <div class="skills-grid">
+                    {% for category in site.data.resume.skills %}
+                    <div class="skill-category">
+                        <h3>{{ category.category }}</h3>
+                        <div class="skills-list">
+                            {% for skill in category.items %}
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">{{ skill.name }}</span>
+                                    <span class="skill-percentage">{{ skill.level }}%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: {{ skill.level }}%"></div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="resume-footer">
+            <div class="container">
+                <p>&copy; {{ 'now' | date: "%Y" }} {{ site.data.resume.name }}. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+

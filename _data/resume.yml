@@ -1,0 +1,418 @@
+# Personal Information
+name: "Michał Bartoszewski"
+tagline: "Dad of 2 | Principal Software Engineer | Tech Lead"
+email: "michal.bartoszewski@yahoo.pl"
+linkedin: "https://www.linkedin.com/in/michal-bartoszewski-41998710/"
+resume_pdf: "/assets/resume.pdf"
+profile_image: "/assets/images/profile.svg"
+
+# About Section
+about:
+  title: "About Me"
+  description: |
+    Hi there ! <br/><br/>
+    My name is Michał but friends call me <b>e1n</b> (pronounced :/aɪn/ or "eye-n"). <br />
+    I am a Software Engineer with over 19 years of experience in the tech industry. <br />
+    I have a strong background in software development particularly:<br />
+      - distributed systems <br />
+      - frameworks design and maintenance, <br />
+      - software architecture <br />
+      - clean code practices. <br />
+    I am passionate about building scalable and efficient software solutions based on data-driven decisions that solve real-world problems. <br />
+
+interests:
+  - "Java | Python | Kotlin"
+  - "Distributed Systems"
+  - "Data Science"
+  - "Software Architecture"
+  - "Software Craftsmanship"
+  - "All things AI !"
+
+hobbies:
+  - "Spending time with my family"
+  - "Kitesurfing"
+  - "Skiing"
+  - "Gaming (PC, Switch 2)"
+  - "Traveling"
+
+# Work Experience
+experience:
+  - company: "Workday Inc."
+    company_logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Workday_Logo.png/1920px-Workday_Logo.png?20170829060830"
+    role: "Principal Software Engineer | Tech Lead"
+    start_date: "July 2015"
+    end_date: "Present"
+    location: "Remote"
+    projects:
+      - name: "Centralized Job Dispatcher (CJD)"
+        description: | 
+          Came with idea / design and implementation of Workday's Job Framework new feature - Centralized Job Dispatcher (CJD).<br />
+          Purpose of CJD is to provide a unified way to manage incoming Job requests to the system.<br />
+          It aims to solve the problem of multiple entry points for Job requests and provide a single point of control for all Jobs dispatch.<br /><br />
+          As a result of CJD implementation we have achieved following benefits:<br />
+            - Improved system performance and scalability by optimizing Job dispatching and resource allocation.<br />
+            - Proper throttling of incoming Job requests to prevent system overload and ensure smooth operation.<br />
+            - Better job balancing across available processing nodes.<br />
+            - Elimination of transactional update conflicts related to Sequential Execution guardrail resolution.<br />
+            - Enhanced monitoring and logging capabilities for better visibility into Job processing and troubleshooting.<br />
+            - Greatly Simplified codebase as was able to shrink its size by 20-30% overall !<br />
+            - Simplified OPS and support processes by providing a single point of control for Job dispatching and management.<br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "Apache Kafka"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg"
+          - name: "MySQL"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          - name: "Junit 5"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg"
+
+      - name: "Remote Partition Processing (RPP)"
+        description: |
+          Aim of this project was to horizontally scale processing of Workday's Job Framework tasks to idle servers in a cluster.<br />
+          Feature came to existence as a result of cluster usage metrics analysis and finding out that <br /> 
+          often there is spare processing capacity on some servers while others are overloaded.<br /><br />
+          Key pillars of RPP implementation were: <br />
+            - Job Load protocol exposing information about cluster nodes capacity.<br />
+            - API to distribute tasks between cluster nodes.<br />
+            - Monitoring layer to intelligently cancel remote tasks when host node is getting its own dedicated traffic.<br />
+          Results achieved by RPP implementation were: <br />
+            - Improved system performance and scalability by optimizing Job processing and resource allocation across cluster nodes.<br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "MySQL"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          - name: "Junit 5"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg"
+
+      - name: "Auto Triage Tool (ATT)"
+        description: |
+          ATT is a standalone CLI tool designed to automate process of log collection and analysis for many Workday's frameworks and services. <br /> <br />
+          It collects structure and unstructured logs from various sources like: <br />
+            - Elasticsearch, <br />
+            - TeamCity, <br />
+            - Jenkins, <br />
+            - E2 instances, <br />
+            - Stats Warehouse <br />
+            - local env.<br />
+          Then it presents it in a user-friendly way as a report with insights and recommendations for next steps. <br />
+          This tool quickly became a go-to tool for Workday's support and SRE teams to troubleshoot issues faster and more efficiently. <br />
+        technologies:
+          - name: "Kotlin"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg"
+          - name: "Elasticsearch"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/elasticsearch/elasticsearch-original.svg"
+          - name: "Apache Hive"
+            logo: "https://upload.wikimedia.org/wikipedia/commons/b/bb/Apache_Hive_logo.svg"
+          - name: "Jenkins"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jenkins/jenkins-line.svg"
+          - name: "Junit 5"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg"
+          - name: "Excel"
+            logo: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Microsoft_Office_Excel_%282019%E2%80%932025%29.svg"
+
+      - name: "Adaptive Dynamic Partitioning (ADP)"
+        description: |
+          One of the problems of batch processing frameworks within transactional systems is related to chunking step input <br /> 
+          If input is too small we might have too many small tasks / transactions which can lead to significant overhead and performance degradation. <br />
+          On the other hand if input is too big we might have long running tasks / transactions which can cause starvation of other tasks and lead to increased latency and reduced throughput. <br />
+          ADP is a feature that dynamically adjusts partition / chunk sizes based on real-time data characteristics and processing requirements. <br />
+          It aims to optimize performance and resource utilization by adapting partitioning approach to changing conditions. <br />
+            Results achieved by ADP implementation were: <br />
+                - Improved system performance and scalability by optimizing partitioning and resource allocation based on real-time data characteristics and processing requirements.<br />
+                - Reduced latency and increased throughput by dynamically adjusting partition sizes to prevent starvation of other tasks and ensure efficient processing.<br />
+                - Better fairness among tasks scheduled to run from different Jobs.<br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "MySQL"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          - name: "Junit 5"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg"
+
+  - company: "International Business Machines Corporation (IBM)"
+    company_logo: "https://www.ibm.com/brand/experience-guides/developer/8f4e3cc2b5d52354a6d43c8edba1e3c9/02_8-bar-reverse.svg"
+    role: "Senior Java Developer"
+    start_date: "May 2013"
+    end_date: "Jun 2015"
+    location: "Remote"
+    projects:
+      - name: "Managed Security Services solution"
+        description: |
+          Comprehensive solution for companies that want to outsource their information security to leading Managed Security Services provider. <br />
+          Service oriented, multi-module system which is capable of fetching and analyzing logs from customer network devices,<br />
+          firewalls, intrusion detection systems, virus protection software etc. <br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "Spring"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+          - name: "BMC Remedy"
+            logo: "https://upload.wikimedia.org/wikipedia/commons/4/46/Logo_BMC_Software.png?20180419132720"
+          - name: "Bash Scripting"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg"
+          - name: "JavaScript"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+          - name: "Cassandra"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cassandra/cassandra-original.svg"
+          - name: "Drools"
+            logo: "https://images.seeklogo.com/logo-png/44/2/drools-logo-png_seeklogo-446072.png"
+          - name: "Grafana"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg"
+          - name: "Junit 5"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg"
+
+  - company: "Nokia Solutions and Networks"
+    company_logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Nokia_Solutions_and_Networks_logo.png/1920px-Nokia_Solutions_and_Networks_logo.png?20150315011057"
+    role: "Previous Role"
+    start_date: "Apr 2012"
+    end_date: "Apr 2013"
+    location: "Wrocław, Poland"
+    projects:
+      - name: "Tool for troubleshooting and tracing GSM, GPRS, 3G and LTE networks"
+        description: |
+          System that is able to trace and troubleshoot various protocols of digital cellular networks. <br />
+          It is collecting and analyzing real time data from different Network Elements such as RNC, BTS, MME etc. <br />
+          One of its main features is ability to generate various textual and graphical reports about traced network. <br />
+          Target audience for this system are mobile phone network operator companies around the world. <br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "C++"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+          - name: "Python"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg"
+          - name: "Open JPA"
+            logo: "https://openjpa.apache.org/images/openjpa-logo.png"
+          - name: "Active MQ"
+            logo: "https://activemq.apache.org/assets/img/activemq_logo_icon.png"
+          - name: "Oracle 11g DB"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/oracle/oracle-original.svg"
+          - name: "Ehcache"
+            logo: "https://www.ehcache.org/images/ehcache.png"
+          - name: "JUnit 4"
+            logo: "https://junit.org/assets/img/junit-logo.svg"
+
+  - company: "Allegro Group"
+    company_logo: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Allegro.pl_sklep.svg"
+    role: "Senior Java Developer"
+    start_date: "Apr 2008"
+    end_date: "Apr 2012"
+    location: "Toruń, Poland"
+    projects:
+      - name: "Product Catalogue"
+        description: |
+          Webservice allowing access to millions of product data including descriptions, assets (like photos, movies), parameters, categories etc. <br />
+          Ready for extremely high traffic and scalable Supporting complex data mapping rules allowing merging data from different providers. <br />
+          Complex pipeline of data processing (for example watermarking data, statistics) <br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "JavaScript"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          - name: "PHP"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+          - name: "Cassandra"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cassandra/cassandra-original.svg"
+          - name: "MySQL"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          - name: "Spring"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg"
+          - name: "Apache Thrift"
+            logo: "https://www.apache.org/images/oakleaf.svg"
+          - name: "Symfony Framework"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original.svg"
+          - name: "JUnit 4"
+            logo: "https://junit.org/assets/img/junit-logo.svg"
+      - name: "Custom Application Server"
+        description: |
+          Application server customised for clients needs.<br />
+          It provided framework to create applications like background daemons, webservices, pages.<br /><br />
+          Among its core functionalities:<br />
+          - Custom Classloader Graph: <br />
+          - Dependency Resolution <br />
+          - Dependency Separation <br />
+          - Runtime Reloading free of Memory Leaks <br />
+          - Log and Monitoring Management <br />
+          - Resource Pooling <br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "JUnit 4"
+            logo: "https://junit.org/assets/img/junit-logo.svg"
+      - name: "Payment and Invoice Service"
+        description: |
+          REST service allowing complicated basket-like operations with functionalities of internet payment and invoicing. <br />
+          System was enabling customers to customize behaviours with plugin system. <br />
+          With thesystem client was able to add complicated payment and invoice functionalities to their site in a matter of days. <br />
+          Other important property of the system was security and logs. <br />
+          Thanks to logs system was able to recreate scenarios and provide data about payment lifecycle. (Journaling) <br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "PHP"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+          - name: "Symfony Framework"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original.svg"
+          - name: "MySQL"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          - name: "JUnit 4"
+            logo: "https://junit.org/assets/img/junit-logo.svg"
+
+      - name: "Group of ECommerce Sites"
+        description: |
+          Group of ecommerce sites with items like offers, products. opinions, jobs. <br />
+          Optimized for high traffic. Allowing user registration and personalized interaction with the site. <br />
+          Just to name a few: <br />
+            - allegro.pl - biggest ecommerce site in Poland <br />
+            - cokupic.pl - site for rating products and sharing it with friends <br />
+            - otopraca.pl - job offers site <br />
+            - oferia.pl - site for sharing offers and services <br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "PHP"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+          - name: "Symfony Framework"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/symfony/symfony-original.svg"
+          - name: "MySQL"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          - name: "Memcached"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/memcached/memcached-original.svg"
+          - name: "Varnish Cache"
+            logo: "https://www.varnish-software.com/media/aeinnosm/varnish-cache_20_pos_medium.webp?rmode=max&width=311&height=69"
+          - name: "Solr"
+            logo: "https://solr.apache.org/theme/images/identity/Solr_Logo_on_white.png"
+
+  - company: "WikiDot.com"
+    company_logo: "https://www.wdfiles.com/common--theme/wikidot30/images/wikidot_logo.png"
+    role: "Web developer & User Interface Architect"
+    start_date: "Jul 2007"
+    end_date: "May 2008"
+    location: "Toruń, Poland"
+    projects:
+      - name: "Wiki hosting service"
+        description: |
+          Wikidot.com is the world's third-largest wiki farm,<br />
+          with over 10 million users running 105 845 537 pages and serving millions of visitors per year.<br />
+        technologies:
+          - name: "JavaScript"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          - name: "Docker"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+
+# Skills
+skills:
+  - category: "Programming Languages"
+    items:
+      - name: "Java"
+        level: 100
+      - name: "Kotlin"
+        level: 80
+      - name: "Python3"
+        level: 60
+      - name: "Bash"
+        level: 70
+      - name: "PHP"
+        level: 80
+      - name: "JavaScript"
+        level: 60
+
+  - category: "Frameworks & Libraries"
+    items:
+      - name: "Spring Framework"
+        level: 60
+      - name: "Google Guava"
+        level: 100
+      - name: "Mockito"
+        level: 100
+      - name: "Junit 5"
+        level: 100
+      - name: "JPA"
+        level: 80
+      - name: "JMS"
+        level: 80
+      - name: "Java EE"
+        level: 90
+      - name: "gRPC"
+        level: 70
+      - name: "Thrift"
+        level: 70
+      - name: "Avro"
+        level: 70
+      - name: "SLF4J"
+        level: 100
+      - name: "Log4j"
+        level: 100
+      - name: "Apache Commons"
+        level: 100
+      - name: "Ktor"
+        level: 90
+      - name: "CLIKT"
+        level: 90
+
+
+  - category: "Tools & Technologies"
+    items:
+      - name: "Jetty"
+        level: 80
+      - name: "Docker"
+        level: 85
+      - name: "SQL"
+        level: 95
+      - name: "REST"
+        level: 95
+      - name: "SOAP"
+        level: 95
+      - name: "Redis"
+        level: 70
+      - name: "Apache Kafka"
+        level: 70
+      - name: "Rabbit MQ"
+        level: 70
+      - name: "Hive"
+        level: 70
+      - name: "Elasticsearch"
+        level: 70
+      - name: "Grafana"
+        level: 70
+      - name: "Jupyter Notebooks"
+        level: 60
+      - name: "Claude Code"
+        level: 60
+      - name: "Github Copilot"
+        level: 60
+      - name: "Notebook LM"
+        level: 60
+      - name: "Teamcity"
+        level: 70
+      - name: "Jenkins"
+        level: 70
+      - name: "Gradle"
+        level: 80
+      - name: "Maven"
+        level: 80
+      - name: "XSLT"
+        level: 100
+      - name: "XSLT-FO"
+        level: 100
+      - name: "XML"
+        level: 100
+      - name: "XSD Schemas"
+        level: 100
+      - name: "YAML"
+        level: 100
+      - name: "CSV"
+        level: 100
+      - name: "HTML"
+        level: 70
+      - name: "CSS"
+        level: 40
+      - name: "Git"
+        level: 90
+      - name: "Slack"
+        level: 90
+      - name: "MS Office"
+        level: 90
+
