@@ -142,7 +142,7 @@ experience:
           Jobs are composed from a declarative metadata model spanning multiple step types, <br />
           with fine-grained control over concurrency strategy, data partitioning, and execution mode, <br />
           so the same framework scales from simple single-step calculations to large, branching, multi-stage batch pipelines. <br />
-          Job Framework runs resiliently across a distributed, multi-node cluster where:
+          Job Framework runs resiliently across a distributed, multi-node cluster where: <br />
           - ZooKeeper-based leader election provides automatic failover, <br />
           - a multi-policy retry system classifies and recovers from failures by domain, <br />
           - a suite of dozens of automated health checks continuously detects and self-heals stuck, flooded, or hung job queues without manual intervention <br />
