@@ -131,6 +131,33 @@ experience:
           - name: "Junit 5"
             logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg"
 
+      - name: "Job Framework"
+        description: |
+          Drive the technical vision, development, and long-term maintenance of the Job Framework, <br />
+          Workdays's highly available, self-healing batch processing framework that runs tenant batch jobs like: <br />
+          — calculations (Payroll etc.), <br />
+          - mass data updates, <br /> 
+          - external-system integrations <br />
+          across the platform. <br />
+          Jobs are composed from a declarative metadata model spanning multiple step types, <br />
+          with fine-grained control over concurrency strategy, data partitioning, and execution mode, <br />
+          so the same framework scales from simple single-step calculations to large, branching, multi-stage batch pipelines. <br />
+          Job Framework runs resiliently across a distributed, multi-node cluster where:
+          - ZooKeeper-based leader election provides automatic failover, <br />
+          - a multi-policy retry system classifies and recovers from failures by domain, <br />
+          - a suite of dozens of automated health checks continuously detects and self-heals stuck, flooded, or hung job queues without manual intervention <br />
+        technologies:
+          - name: "Java"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          - name: "MySQL"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+          - name: "Junit 5"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-plain-wordmark.svg"
+          - name: "Apache Kafka"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg"
+          - name: "Redis"
+            logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original-wordmark.svg"
+
   - company: "International Business Machines Corporation (IBM)"
     company_logo: "https://www.ibm.com/brand/experience-guides/developer/8f4e3cc2b5d52354a6d43c8edba1e3c9/02_8-bar-reverse.svg"
     role: "Senior Java Developer"
